@@ -1,21 +1,25 @@
+""" a dummy doc string"""
 from tkinter import*
-expression=""
+import ast
+EXPRESSION=""
 def press(num):
-    global expression
-    expression=expression+str(num)
-    equation.set(expression)
+    """ a dummy doc string"""
+    global EXPRESSION
+    EXPRESSION=EXPRESSION+str(num)
+    equation.set(EXPRESSION)
 
 def clear():
-    global expression
-    expression=""
+    """ a dummy doc string"""
+    global EXPRESSION
+    EXPRESSION=""
     equation.set("")
 
 def equal():
-    global expression
-    total=str(eval(expression))
+    """ a dummy doc string"""
+    global EXPRESSION
+    total=str(ast.literal_eval(EXPRESSION))
     equation.set(total)
-    expression=""
-    
+    EXPRESSION=""
 top=Tk()
 top.title("simple calculator")
 top.geometry("340x300")
@@ -79,5 +83,4 @@ clear=Button(top,text="clear", height=1,width=7,command=clear)
 clear.grid(row=9,column=1,columnspan=2)
 
 top.mainloop()
-
  
